@@ -15,14 +15,22 @@ const setup = (initialState = {}) => {
 describe('<Input />', () => {
   describe('render', () => {
     describe('word has not been guessed', () => {
+      let wrapper;
+      beforeEach(() => {
+        const initialState = { success: false };
+        wrapper = setup(initialState);
+      });
       it('renders without error', () => {
-        throw new Error('dummy error');
+        const component = findByTestAttr(wrapper, 'component-input');
+        expect(component.length).toBe(1);
       });
       it('renders an input box', () => {
-        throw new Error('dummy error');
+        const component = findByTestAttr(wrapper, 'component-input-box');
+        expect(component.length).toBe(1);
       });
       it('renders a submit button', () => {
-        throw new Error('dummy error');
+        const component = findByTestAttr(wrapper, 'component-submit-btn');
+        expect(component.length).toBe(1);
       });
     });
 
