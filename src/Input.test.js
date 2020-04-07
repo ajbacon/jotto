@@ -35,14 +35,22 @@ describe('<Input />', () => {
     });
 
     describe('word has been guessed', () => {
+      let wrapper;
+      beforeEach(() => {
+        const initialState = { success: true };
+        wrapper = setup(initialState);
+      });
       it('renders without error', () => {
-        throw new Error('dummy error');
+        const component = findByTestAttr(wrapper, 'component-input');
+        expect(component.length).toBe(1);
       });
       it('does not render an input box', () => {
-        throw new Error('dummy error');
+        const component = findByTestAttr(wrapper, 'component-input-box');
+        expect(component.length).toBe(0);
       });
       it('does not render a submit button', () => {
-        throw new Error('dummy error');
+        const component = findByTestAttr(wrapper, 'component-submit-btn');
+        expect(component.length).toBe(0);
       });
     });
   });
