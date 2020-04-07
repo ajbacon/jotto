@@ -27,6 +27,9 @@ describe('if there are no words guessed', () => {
   beforeEach(() => {
     wrapper = setup({ guessedWords: [] });
   });
+  // afterEach(() => {
+  //   wrapper.unMount();
+  // });
   test('renders without error', () => {
     const component = findByTestAttr(wrapper, 'component-guessed-words');
     expect(component.length).toBe(1);
@@ -46,6 +49,9 @@ describe('if there are words guessed', () => {
   beforeEach(() => {
     wrapper = setup({ guessedWords });
   });
+  // afterEach(() => {
+  //   wrapper.unMount();
+  // });
   test('renders without error', () => {
     const component = findByTestAttr(wrapper, 'component-guessed-words');
     expect(component.length).toBe(1);
